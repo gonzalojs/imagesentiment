@@ -1,13 +1,12 @@
 const T = require('tesseract.js');
 
-function getText(img) {
+module.exports = function getText(img, leng) {
     // aqui debiera asegurarme de que img es una imagen
 
-    T.recognize(img, 'eng', {
+    T.recognize(img, leng, {
             logger: e => console.log(e)
         })
         .then(out => {
-            const datas = out.data.text
-            return datas
+            return out.data.text
         })
 }
