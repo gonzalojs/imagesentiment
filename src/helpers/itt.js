@@ -1,8 +1,16 @@
 const T = require('tesseract.js');
 
-T.recognize('src/Capture.PNG', 'eng', {
-        logger: e => console.log(e)
-    })
-    .then(out => {
-        console.log(out.data.text)
-    })
+function getText(img) {
+    // aqui debiera asegurarme de que img es una imagen
+
+    T.recognize(img, 'eng', {
+            logger: e => console.log(e)
+        })
+        .then(out => {
+            const datas = out.data.text
+            return datas
+        })
+}
+
+console.log(getText('src/Capture.PNG'))
+

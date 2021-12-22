@@ -14,9 +14,7 @@ spellCorrector.loadDictionary()
 const analyzer = new SentimentAnalyzer('English', PorterStemmer, 'afinn')
 
 module.exports = function getSentiment(str) {
-    console.log('ejecutando')
-
-    if (typeof(str) !== 'string') {
+    if (typeof (str) !== 'string') {
         return 'Not String'
     }
 
