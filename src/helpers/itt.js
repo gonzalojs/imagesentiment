@@ -11,6 +11,3 @@ function getText(img) {
             return datas
         })
 }
-
-console.log(getText('src/Capture.PNG'))
-
